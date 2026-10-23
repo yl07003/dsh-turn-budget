@@ -163,3 +163,28 @@ uninstall.bat
 
 - **[PLUGIN-SPEC.md](./PLUGIN-SPEC.md)** —— 依赖的 DSH 接口契约（最可能被破坏的部分）、全部功能清单、升级后自检清单、从零重建步骤。
 - 本文件（README）是**使用说明**；两者分工：日常看 README，DSH 升级或要改代码看 PLUGIN-SPEC。
+
+## 安装（GitHub 版）
+
+**要求**：DSH 0.2.x（已在 `0.2.1-rc.2` 上验证 ✓）；本机有 `node` / `npm` ✓。
+
+```powershell
+# 把 desktop 换成你自己的 profile 名（桌面版通常就是 desktop；
+# 不确定就看一下 ~/.dsh/profiles/ 下的目录名）
+dsh plugin --profile desktop add "github:yl07003/dsh-turn-budget"
+
+# 然后重启 DSH
+```
+
+**装好之后看到什么**：输入框上方多出两行 ✓（熔断状态 + 余额/花费）✓；`谷`/`峰` 徽章悬停可见判定口径与假期表 ✓。
+
+**卸载**：
+
+```powershell
+dsh plugin --profile desktop remove dsh-turn-budget
+```
+
+**注意**：
+- 插件只在**本机这个 DSH 进程**里生效 ✓，按**会话**统计 ✓；
+- 想要"真实余额"源：在 DSH 里登录平台账号 ✓（否则自动回退到 API key ✓，再不行只剩估算 ✓）；
+- 兼容性：`0.1.5-rc.3 → 0.1.7-rc.2 → 0.2.0-rc.1 → 0.2.1-rc.2` **四次升级均无需改代码** ✓。
