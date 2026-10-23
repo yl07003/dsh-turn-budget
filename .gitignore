@@ -1,0 +1,6 @@
+node_modules/
+*.csv
+*.log
+.env
+*.tmp
+_DRAFT*

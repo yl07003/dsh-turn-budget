@@ -1,0 +1,6 @@
+# dsh-turn-budget bundle patch: insert the plugin row.
+# Installed as a bundle, the row references the package by name (Node resolution
+# finds the installed code); activation order is driven by service dependencies.
+- insert:
+    - id: turn-budget
+      name: dsh-turn-budget

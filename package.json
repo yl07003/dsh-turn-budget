@@ -1,0 +1,27 @@
+{
+  "name": "dsh-turn-budget",
+  "version": "1.0.1",
+  "description": "Spend circuit breaker for DeepSeek Harness: a 6-minute sliding window over a per-step token estimate and the real DeepSeek account balance, so new model requests park on a gate before they can run away. Includes peak/idle pricing with CN statutory holidays, an editable composer dock row, and a self-test endpoint.",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "client.js"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "license": "MIT"
+}
