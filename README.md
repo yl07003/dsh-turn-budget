@@ -6,16 +6,37 @@
 
 ## 安装
 
-要求：DSH 0.2.x、本机有 `node` / `npm`。
+**要求**：DSH 0.2.x。
+
+### 方式 A：DSH 界面（推荐）
+
+1. DSH → **插件** → **安装**；
+2. 输入框里填仓库地址：
+
+   ```
+   https://github.com/yl07003/dsh-turn-budget
+   ```
+
+3. 点 **安装** → **重启 DSH** → 输入框上方应出现两行。
+
+### 方式 B：命令行（本机有 Node/npm 时）
 
 ```powershell
-dsh plugin --profile desktop add "github:yl07003/dsh-turn-budget#v1.0.1"
-# 然后重启 DSH
+dsh plugin --profile desktop add "github:yl07003/dsh-turn-budget"
+
+# 没有 dsh 命令时用 npx：
+npx @deepseek-ai/dsh plugin --profile desktop add "github:yl07003/dsh-turn-budget"
 ```
 
-- `desktop` 换成你自己的 profile 名（不确定就看 `~/.dsh/profiles/` 下的目录名）；
-- 卸载：`dsh plugin --profile desktop remove dsh-turn-budget`；
-- 不锁版本就去掉 `#v1.0.1`（跟随 `main`）。
+`desktop` 换成你自己的 profile 名（不确定就看 `~/.dsh/profiles/` 下的目录名）。卸载：`dsh plugin --profile desktop remove dsh-turn-budget`。
+
+### 方式 C：网络装不上时（zip / 本地目录）
+
+1. 下载 [dsh-turn-budget-v1.0.1.zip](https://github.com/yl07003/dsh-turn-budget/releases/download/v1.0.1/dsh-turn-budget-v1.0.1.zip)（Release 页面里也有）；
+2. 解压到任意目录 —— **保证这一层目录里直接有 `package.json`**；
+3. DSH → 插件 → 安装 → 填**那个目录的路径** → 重启。
+
+> 三种方式装的是同一个包；插件在本机以你的权限运行，只影响本机这个 DSH 进程。
 
 ## 它做什么
 
